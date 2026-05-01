@@ -27,3 +27,10 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# IDE 配置文件
+.idea/
+*.iml
+*.iws
+*.ipr
+out
