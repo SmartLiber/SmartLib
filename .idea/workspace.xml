@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0f568cf3-c5f3-49b9-9e68-76983cc35b22" name="更改" comment="sb">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +20,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -60,6 +69,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Git.Working.Tree.Tab.closed.by.user": "closed",
     "JAR 应用程序.mysql-connector-j-9.3.0.jar.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -109,6 +119,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR 应用程序.mysql-connector-j-9.3.0.jar" />
         <item itemvalue="JAR 应用程序.mysql-connector-j-9.3.0.jar" />
         <item itemvalue="JAR 应用程序.mysql-connector-j-9.3.0.jar" />
       </list>
@@ -221,6 +232,7 @@
     <MESSAGE value="萨" />
     <MESSAGE value="许书铭" />
     <MESSAGE value="sb" />
-    <option name="LAST_COMMIT_MESSAGE" value="sb" />
+    <MESSAGE value="2026050022215" />
+    <option name="LAST_COMMIT_MESSAGE" value="2026050022215" />
   </component>
 </project>
