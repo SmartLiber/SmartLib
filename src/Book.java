@@ -10,6 +10,9 @@ public class Book {
     private String returnDate;
     private String createTime;
     private String updateTime;
+    // 关联字段
+    private BookCategory category;
+    private User borrowUser;
 
     public Book() {
     }
@@ -27,6 +30,23 @@ public class Book {
         this.returnDate = returnDate;
         this.createTime = createTime;
         this.updateTime = updateTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", categoryId=" + categoryId +
+                ", introduction='" + introduction + '\'' +
+                ", status='" + status + '\'' +
+                ", borrowUserId=" + borrowUserId +
+                ", borrowDate='" + borrowDate + '\'' +
+                ", returnDate='" + returnDate + '\'' +
+                ", createTime='" + createTime + '\'' +
+                ", updateTime='" + updateTime + '\'' +
+                '}';
     }
 
     public Integer getId() {
@@ -115,5 +135,21 @@ public class Book {
 
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public BookCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(BookCategory category) {
+        this.category = category;
+    }
+
+    public User getBorrowUser() {
+        return borrowUser;
+    }
+
+    public void setBorrowUser(User borrowUser) {
+        this.borrowUser = borrowUser;
     }
 }

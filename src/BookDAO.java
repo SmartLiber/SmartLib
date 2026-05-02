@@ -145,4 +145,37 @@ public class BookDAO {
         book.setUpdateTime(rs.getString("update_time"));
         return book;
     }
+
+    public Book getBookDetailById(int bookId) {
+        String sql = "SELECT b.*, c.category_id, c.category_name, u.user_id, u.username, u.phone " +
+                     "FROM book b " +
+                     "LEFT JOIN book_category c ON b.category_id = c.category_id " +
+                     "LEFT JOIN sys_user u ON b.borrow_user_id = u.user_id " +
+                     "WHERE b.id=?";
+        try (Connection conn = DBUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, bookId);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                Book book = mapResultSetToBook(rs);
+                if (rs.getInt("category_id") > 0) {
+                    BookCategory category = new BookCategory();
+                    category.setCategoryId(rs.getInt("category_id"));
+                    category.setCategoryName(rs.getString("category_name"));
+                    book.setCategory(category);
+                }
+                if (rs.getInt("user_id") > 0) {
+                    User user = new User();
+                    user.setUserId(rs.getInt("user_id"));
+                    user.setUsername(rs.getString("username"));
+                    user.setPhone(rs.getString("phone"));
+                    book.setBorrowUser(user);
+                }
+                return book;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

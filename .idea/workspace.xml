@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f568cf3-c5f3-49b9-9e68-76983cc35b22" name="更改" comment="sb">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +46,9 @@
     &quot;accountId&quot;: &quot;6e878f29-e76d-4d9a-93c7-576ed2b91ce2&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
@@ -57,6 +61,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JAR 应用程序.mysql-connector-j-9.3.0.jar.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -105,6 +110,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JAR 应用程序.mysql-connector-j-9.3.0.jar" />
+        <item itemvalue="JAR 应用程序.mysql-connector-j-9.3.0.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -124,6 +130,7 @@
       <workItem from="1777650461488" duration="308000" />
       <workItem from="1777653107148" duration="738000" />
       <workItem from="1777708103708" duration="2945000" />
+      <workItem from="1777713148539" duration="6359000" />
     </task>
     <task id="LOCAL-00001" summary="萨">
       <option name="closed" value="true" />
@@ -165,7 +172,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777651151960</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="sb">
+      <option name="closed" value="true" />
+      <created>1777712972429</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1777712972431</updated>
+    </task>
+    <task id="LOCAL-00007" summary="sb">
+      <option name="closed" value="true" />
+      <created>1777713034027</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1777713034027</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
