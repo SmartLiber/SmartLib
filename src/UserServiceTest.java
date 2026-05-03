@@ -7,6 +7,7 @@ public class UserServiceTest {
 
         UserService userService = new UserService();
         BookService bookService = new BookService();
+        BookCategoryDAO categoryDAO = new BookCategoryDAO();
 
         // ========== 第一部分：用户注册和登录测试 ==========
         System.out.println("\n--- 测试1: 用户注册 ---");
@@ -36,15 +37,31 @@ public class UserServiceTest {
         boolean categoryAdded = bookService.addCategory("测试分类-文学");
         System.out.println("添加分类结果: " + (categoryAdded ? "成功" : "失败"));
 
+        // 动态获取分类ID
+        int testCategoryId = 0;
+        List<BookCategory> allCategories = categoryDAO.getAllCategories();
+        for (BookCategory cat : allCategories) {
+            if ("测试分类-文学".equals(cat.getCategoryName())) {
+                testCategoryId = cat.getCategoryId();
+                break;
+            }
+        }
+        System.out.println("测试分类ID: " + testCategoryId);
+
         System.out.println("\n--- 测试6: 添加测试书籍 ---");
-        boolean bookAdded = bookService.addNewBook("Java编程思想", "Bruce Eckel", 1, "Java经典著作");
+        boolean bookAdded = false;
+        if (testCategoryId > 0) {
+            bookAdded = bookService.addNewBook("Java编程思想", "Bruce Eckel", testCategoryId, "Java经典著作");
+        } else {
+            System.out.println("未找到测试分类，跳过添加书籍");
+        }
         System.out.println("添加书籍结果: " + (bookAdded ? "成功" : "失败"));
 
         // 获取刚添加的书籍ID
         List<Book> searchResults = bookService.searchBooks("Java编程思想");
         int testBookId = 0;
         if (!searchResults.isEmpty()) {
-            testBookId = searchResults.get(0).getId();
+            testBookId = searchResults.getFirst().getId();
             System.out.println("测试书籍ID: " + testBookId);
         }
 
@@ -109,6 +126,8 @@ public class UserServiceTest {
             System.out.println("\n--- 测试18: 归还续借的书籍 ---");
             boolean returnRenewedResult = userService.returnBookWithValidation(testBookId);
             System.out.println("归还续借书籍结果: " + (returnRenewedResult ? "成功" : "失败"));
+        } else {
+            System.out.println("\n⚠️ 跳过借书/还书测试（缺少测试数据）");
         }
 
         // ========== 第六部分：用户统计功能测试 ==========
@@ -158,9 +177,11 @@ public class UserServiceTest {
             System.out.println("删除书籍结果: " + (bookDeleted ? "成功" : "失败"));
         }
 
-        System.out.println("\n删除测试分类：");
-        boolean categoryDeleted = bookService.removeCategory(1);
-        System.out.println("删除分类结果: " + (categoryDeleted ? "成功" : "失败"));
+        if (testCategoryId > 0) {
+            System.out.println("\n删除测试分类（ID=" + testCategoryId + "）：");
+            boolean categoryDeleted = bookService.removeCategory(testCategoryId);
+            System.out.println("删除分类结果: " + (categoryDeleted ? "成功" : "失败"));
+        }
 
         if (testUserId > 0) {
             System.out.println("\n删除测试用户（ID=" + testUserId + "）：");
