@@ -28,6 +28,8 @@ bin/
 ### Mac OS ###
 .DS_Store
 
+.idea/workspace.xml
+
 # IDE 配置文件
 .idea/
 *.iml
