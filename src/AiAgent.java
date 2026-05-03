@@ -2,6 +2,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.net.http.HttpResponse.BodyHandlers;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,6 +17,8 @@ public class AiAgent {
 
     /**
      * 流式回调接口
+     * 流式数据是 异步 的（数据一点一点来），不能用返回值直接获取，需要通过回调通知调用者。
+     * AiAgentUI 实现了这个接口，用于实时显示模型的输出和思考过程
      */
     public interface StreamCallback {
         //当收到新的回复内容时调用
@@ -51,11 +54,6 @@ public class AiAgent {
         return extractJsonValue(response.body(), "response");
     }
 
-    /**
-     * 流式：实时获取 AI 的输出
-     * @param prompt 用户问题
-     * @param callback 回调接口，用于接收实时内容
-     */
     public static void askStream(String prompt, StreamCallback callback) {
         try {
             String json = String.format("""
@@ -72,10 +70,18 @@ public class AiAgent {
                     .POST(HttpRequest.BodyPublishers.ofString(json))
                     .build();
 
-            // 发送请求并接收流式响应
+            /*
+            发送请求并接收流式响应  异步流式响应处理
+            sendAsync()异步发送请求
+            BodyHandlers.ofLines()逐行处理响应体
+            */
+
             CLIENT.sendAsync(request, HttpResponse.BodyHandlers.ofLines())
                     .thenAccept(response -> {
+
+                        // 当响应成功到达时执行
                         response.body().forEach(line -> {
+                            // 处理每一行
                             if (line.trim().isEmpty()) {
                                 return;
                             }
