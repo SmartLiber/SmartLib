@@ -20,6 +20,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -56,6 +69,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Git.Working.Tree.Tab.closed.by.user": "closed",
     "JAR 应用程序.mysql-connector-j-9.3.0.jar.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -218,6 +232,7 @@
     <MESSAGE value="萨" />
     <MESSAGE value="许书铭" />
     <MESSAGE value="sb" />
-    <option name="LAST_COMMIT_MESSAGE" value="sb" />
+    <MESSAGE value="2026050022215" />
+    <option name="LAST_COMMIT_MESSAGE" value="2026050022215" />
   </component>
 </project>
