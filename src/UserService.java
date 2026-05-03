@@ -111,28 +111,4 @@ public class UserService {
         return userDAO.getAllUsers();
     }
 
-    public class TestUserService {
-        public static void main(String[] args) {
-            UserService userService = new UserService();
-
-            // 测试借书协作
-            System.out.println("\n=== 测试借书 ===");
-            boolean borrowResult = userService.borrowBookWithValidation(1, 5);
-            System.out.println("借书结果: " + borrowResult);
-
-            // 测试还书协作
-            System.out.println("\n=== 测试还书 ===");
-            boolean returnResult = userService.returnBookWithValidation(5);
-            System.out.println("还书结果: " + returnResult);
-
-            // 测试用户统计
-            System.out.println("\n=== 测试用户统计 ===");
-            java.util.Map<String, Object> stats = userService.getUserStatistics(1);
-            if (stats != null) {
-                System.out.println("当前借阅数: " + stats.get("currentBorrowedCount"));
-                System.out.println("有未还书籍: " + stats.get("hasUnreturned"));
-            }
-        }
-    }
-
 }
