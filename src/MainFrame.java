@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 /**
  * 系统主界面
  * 开发人员A - Swing前端任务3/8
- * 提供功能入口：用户列表、借阅历史、未还书籍等
  */
 public class MainFrame extends JFrame {
     private User currentUser;
@@ -28,14 +27,12 @@ public class MainFrame extends JFrame {
         JPanel mainPanel = new JPanel(new BorderLayout(10, 10));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         
-        // 顶部欢迎区域
         JPanel topPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel welcomeLabel = new JLabel("欢迎，" + currentUser.getUsername() + "！");
         welcomeLabel.setFont(new Font("微软雅黑", Font.BOLD, 24));
         welcomeLabel.setForeground(new Color(41, 128, 185));
         topPanel.add(welcomeLabel);
         
-        // 中间功能按钮区域
         JPanel centerPanel = new JPanel(new GridLayout(4, 2, 20, 20));
         centerPanel.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
         
@@ -66,7 +63,6 @@ public class MainFrame extends JFrame {
             centerPanel.add(button);
         }
         
-        // 底部状态栏
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JLabel statusLabel = new JLabel("用户ID: " + currentUser.getUserId());
         statusLabel.setFont(new Font("微软雅黑", Font.PLAIN, 12));
@@ -82,16 +78,16 @@ public class MainFrame extends JFrame {
     private void handleButtonClick(String label) {
         switch (label) {
             case "📚 用户列表":
-                openUserListFrame();
+                new UserListFrame().setVisible(true);
                 break;
             case "📖 借阅历史":
-                openBorrowHistoryFrame();
+                new BorrowHistoryFrame(currentUser.getUserId()).setVisible(true);
                 break;
             case "⚠️ 未还书籍":
-                openUnreturnedBooksFrame();
+                new UnreturnedBooksFrame(currentUser.getUserId()).setVisible(true);
                 break;
             case "✏️ 编辑信息":
-                openEditUserInfoFrame();
+                new EditUserInfoFrame(currentUser).setVisible(true);
                 break;
             case "📊 用户统计":
                 showUserStatistics();
@@ -106,26 +102,6 @@ public class MainFrame extends JFrame {
                 logout();
                 break;
         }
-    }
-    
-    private void openUserListFrame() {
-        UserListFrame userListFrame = new UserListFrame();
-        userListFrame.setVisible(true);
-    }
-    
-    private void openBorrowHistoryFrame() {
-        BorrowHistoryFrame borrowHistoryFrame = new BorrowHistoryFrame(currentUser.getUserId());
-        borrowHistoryFrame.setVisible(true);
-    }
-    
-    private void openUnreturnedBooksFrame() {
-        UnreturnedBooksFrame unreturnedFrame = new UnreturnedBooksFrame(currentUser.getUserId());
-        unreturnedFrame.setVisible(true);
-    }
-    
-    private void openEditUserInfoFrame() {
-        EditUserInfoFrame editFrame = new EditUserInfoFrame(currentUser);
-        editFrame.setVisible(true);
     }
     
     private void showUserStatistics() {
@@ -144,8 +120,7 @@ public class MainFrame extends JFrame {
         if (input != null && !input.trim().isEmpty()) {
             User foundUser = userService.loginUser(input.trim());
             if (foundUser != null) {
-                UserDetailFrame detailFrame = new UserDetailFrame(foundUser);
-                detailFrame.setVisible(true);
+                new UserDetailFrame(foundUser).setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this,
                     "❌ 未找到用户：" + input,
@@ -174,8 +149,7 @@ public class MainFrame extends JFrame {
         
         if (choice == JOptionPane.YES_OPTION) {
             this.dispose();
-            LoginFrame loginFrame = new LoginFrame();
-            loginFrame.setVisible(true);
+            new LoginFrame().setVisible(true);
         }
     }
     
