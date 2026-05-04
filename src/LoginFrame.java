@@ -30,7 +30,7 @@ public class LoginFrame extends JFrame {
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 40, 20, 40));
 
         JPanel titlePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        JLabel titleLabel = new JLabel("🔐 用户登录");
+        JLabel titleLabel = new JLabel(" 用户登录");
         titleLabel.setFont(new Font("微软雅黑", Font.BOLD, 22));
         titleLabel.setForeground(new Color(41, 128, 185));
         titlePanel.add(titleLabel);
@@ -69,8 +69,7 @@ public class LoginFrame extends JFrame {
         loginButton = new JButton("登 录");
         loginButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
         loginButton.setPreferredSize(new Dimension(120, 40));
-        loginButton.setBackground(new Color(41, 128, 185));
-        loginButton.setForeground(Color.WHITE);
+        loginButton.setForeground(Color.BLACK);
         loginButton.setFocusPainted(false);
         loginButton.addActionListener(new ActionListener() {
             @Override
@@ -82,6 +81,7 @@ public class LoginFrame extends JFrame {
         registerButton = new JButton("注 册");
         registerButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
         registerButton.setPreferredSize(new Dimension(120, 40));
+        registerButton.setForeground(Color.BLACK);
         registerButton.setFocusPainted(false);
         registerButton.addActionListener(new ActionListener() {
             @Override
@@ -126,20 +126,20 @@ public class LoginFrame extends JFrame {
 
             if (user != null) {
                 JOptionPane.showMessageDialog(this,
-                        "✅ 登录成功！\n\n欢迎，" + user.getUsername(),
+                        " 登录成功！\n\n欢迎，" + user.getUsername(),
                         "成功",
                         JOptionPane.INFORMATION_MESSAGE);
 
                 openMainFrame(user);
             } else {
                 JOptionPane.showMessageDialog(this,
-                        "❌ 用户名不存在！\n\n请先注册或检查用户名是否正确。",
+                        " 用户名不存在！\n\n请先注册或检查用户名是否正确。",
                         "错误",
                         JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this,
-                    "❌ 登录失败：" + e.getMessage(),
+                    " 登录失败：" + e.getMessage(),
                     "错误",
                     JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
