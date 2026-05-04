@@ -138,7 +138,7 @@ category.setCategoryName("分类名称");
 ## 完整示例
 
 ```java
-public class Main {
+public class Test_sql {
     public static void main(String[] args) {
         BookCategoryDAO categoryDAO = new BookCategoryDAO();
 

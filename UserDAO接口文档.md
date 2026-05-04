@@ -175,7 +175,7 @@ user.setPhone("13800138001");
 ## 完整示例
 
 ```java
-public class Main {
+public class Test_sql {
     public static void main(String[] args) {
         UserDAO userDAO = new UserDAO();
 
