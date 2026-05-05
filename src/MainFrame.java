@@ -30,9 +30,9 @@ public class MainFrame extends JFrame {
     private void initMenuBar() {
         JMenuBar menuBar = new JMenuBar();
 
-        // === 1. 常用功能（不变）===
-        JMenu menuCommon = new JMenu("常用功能");
-        menuCommon.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        // === 1. 首页 ===
+        JMenu menuHome = new JMenu("首页");
+        menuHome.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 
         JMenuItem itemBrowseBooks = new JMenuItem("浏览图书");
         itemBrowseBooks.setFont(new Font("微软雅黑", Font.PLAIN, 13));
@@ -44,82 +44,54 @@ public class MainFrame extends JFrame {
         itemSearchBooks.setIcon(new ImageIcon("material/查找图书.jpg"));
         itemSearchBooks.addActionListener(e -> searchBooks());
 
-        menuCommon.add(itemBrowseBooks);
-        menuCommon.add(itemSearchBooks);
+        menuHome.add(itemBrowseBooks);
+        menuHome.add(itemSearchBooks);
 
-        // === 2. 个人中心（我的空间 + 借阅管理）===
+        // === 2. 个人中心 ===
         JMenu menuPersonal = new JMenu("个人中心");
         menuPersonal.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 
-        // 我的空间（带子菜单：个人信息、编辑信息、登录、退出登录）
-        JMenu subMenuMySpace = new JMenu("我的空间");
-        subMenuMySpace.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        subMenuMySpace.setIcon(new ImageIcon("material/我的空间.jpg"));
+        JMenuItem itemMySpace = new JMenuItem("我的空间");
+        itemMySpace.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+        itemMySpace.setIcon(new ImageIcon("material/我的空间.jpg"));
+        itemMySpace.addActionListener(e -> showPersonalInfo());
 
-        JMenuItem itemPersonalInfo = new JMenuItem("个人信息");
-        itemPersonalInfo.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        itemPersonalInfo.addActionListener(e -> showPersonalInfo());
-
-        JMenuItem itemEditInfo = new JMenuItem("编辑信息");
-        itemEditInfo.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        itemEditInfo.addActionListener(e -> openEditInfo());
-
-        JMenuItem itemLogin = new JMenuItem("登录");
-        itemLogin.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        itemLogin.setIcon(new ImageIcon("material/登录.jpg"));
-        itemLogin.addActionListener(e -> reLogin());
+        JMenuItem itemBorrowManage = new JMenuItem("借阅管理");
+        itemBorrowManage.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+        itemBorrowManage.addActionListener(e -> openBorrowManage());
 
         JMenuItem itemLogout = new JMenuItem("退出登录");
         itemLogout.setFont(new Font("微软雅黑", Font.PLAIN, 13));
         itemLogout.addActionListener(e -> logout());
 
-        subMenuMySpace.add(itemPersonalInfo);
-        subMenuMySpace.add(itemEditInfo);
-        subMenuMySpace.addSeparator();
-        subMenuMySpace.add(itemLogin);
-        subMenuMySpace.add(itemLogout);
-
-        // 借阅管理
-        JMenuItem itemBorrowManage = new JMenuItem("借阅管理");
-        itemBorrowManage.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        itemBorrowManage.addActionListener(e -> openBorrowManage());
-
-        menuPersonal.add(subMenuMySpace);
+        menuPersonal.add(itemMySpace);
         menuPersonal.add(itemBorrowManage);
+        menuPersonal.addSeparator();
+        menuPersonal.add(itemLogout);
 
-        // === 3. 系统维护（后台管理 + 用户管理 + 刷新数据）===
+        // === 3. 系统维护 ===
         JMenu menuSystem = new JMenu("系统维护");
         menuSystem.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+
+        JMenuItem itemUserManage = new JMenuItem("用户管理");
+        itemUserManage.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+        itemUserManage.addActionListener(e -> openUserManage());
 
         JMenuItem itemAdmin = new JMenuItem("后台管理");
         itemAdmin.setFont(new Font("微软雅黑", Font.PLAIN, 13));
         itemAdmin.setIcon(new ImageIcon("material/后台管理.jpg"));
         itemAdmin.addActionListener(e -> openAdmin());
 
-        JMenu subMenuUserManage = new JMenu("用户管理");
-        subMenuUserManage.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-
-        JMenuItem itemUserList = new JMenuItem("用户列表");
-        itemUserList.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        itemUserList.addActionListener(e -> openUserList());
-
-        JMenuItem itemUserStats = new JMenuItem("用户统计");
-        itemUserStats.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        itemUserStats.addActionListener(e -> showUserStats());
-
-        subMenuUserManage.add(itemUserList);
-        subMenuUserManage.add(itemUserStats);
-
         JMenuItem itemRefresh = new JMenuItem("刷新数据");
         itemRefresh.setFont(new Font("微软雅黑", Font.PLAIN, 13));
         itemRefresh.addActionListener(e -> refreshData());
 
+        menuSystem.add(itemUserManage);
         menuSystem.add(itemAdmin);
-        menuSystem.add(subMenuUserManage);
         menuSystem.addSeparator();
         menuSystem.add(itemRefresh);
 
-        // === 4. 帮助（不变）===
+        // === 4. 帮助 ===
         JMenu menuHelp = new JMenu("帮助");
         menuHelp.setFont(new Font("微软雅黑", Font.PLAIN, 14));
 
@@ -137,7 +109,7 @@ public class MainFrame extends JFrame {
         menuHelp.add(itemAbout);
 
         // 添加所有菜单到菜单栏
-        menuBar.add(menuCommon);
+        menuBar.add(menuHome);
         menuBar.add(menuPersonal);
         menuBar.add(menuSystem);
         menuBar.add(menuHelp);
@@ -175,22 +147,6 @@ public class MainFrame extends JFrame {
         new UserDetailFrame(currentUser).setVisible(true);
     }
 
-    private void openEditInfo() {
-        new EditUserInfoFrame(currentUser).setVisible(true);
-    }
-
-    private void reLogin() {
-        int choice = JOptionPane.showConfirmDialog(this,
-                "确定要重新登录吗？",
-                "确认",
-                JOptionPane.YES_NO_OPTION);
-
-        if (choice == JOptionPane.YES_OPTION) {
-            this.dispose();
-            new LoginFrame().setVisible(true);
-        }
-    }
-
     private void logout() {
         int choice = JOptionPane.showConfirmDialog(this,
                 "确定要退出登录吗？",
@@ -207,25 +163,14 @@ public class MainFrame extends JFrame {
         new BorrowHistoryFrame(currentUser.getUserId()).setVisible(true);
     }
 
+    private void openUserManage() {
+        new UserManageFrame().setVisible(true);
+    }
+
     private void openAdmin() {
         JOptionPane.showMessageDialog(this,
                 " 后台管理功能\n\n（此功能开发中）",
                 "提示",
-                JOptionPane.INFORMATION_MESSAGE);
-    }
-
-    private void openUserList() {
-        new UserListFrame().setVisible(true);
-    }
-
-    private void showUserStats() {
-        int totalUsers = userService.getTotalUserCount();
-        JOptionPane.showMessageDialog(this,
-                " 用户统计信息\n\n" +
-                        "总用户数: " + totalUsers + "\n" +
-                        "当前用户ID: " + currentUser.getUserId() + "\n" +
-                        "当前用户名: " + currentUser.getUsername(),
-                "统计信息",
                 JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -243,10 +188,10 @@ public class MainFrame extends JFrame {
     private void showHelp() {
         JOptionPane.showMessageDialog(this,
                 " 帮助信息\n\n" +
-                        "1. 常用功能：浏览和查找图书\n" +
-                        "2. 个人中心：我的空间和借阅管理\n" +
-                        "3. 系统维护：后台管理、用户管理、刷新数据\n" +
-                        "4. 帮助：查看帮助信息",
+                        "1. 首页：浏览和查找图书\n" +
+                        "2. 个人中心：我的空间、借阅管理、退出登录\n" +
+                        "3. 系统维护：用户管理、后台管理、刷新数据\n" +
+                        "4. 帮助：帮助信息和关于系统",
                 "帮助",
                 JOptionPane.INFORMATION_MESSAGE);
     }
