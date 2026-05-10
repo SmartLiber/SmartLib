@@ -126,16 +126,16 @@ public class BookListFrame extends JFrame {
 
         JButton borrowBtn = new JButton("借阅此书");
         borrowBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
-        borrowBtn.setBackground(new Color(41, 128, 185));
-        borrowBtn.setForeground(Color.WHITE);
+        borrowBtn.setBackground(new Color(120, 180, 230));
+        borrowBtn.setForeground(btnDark);
         borrowBtn.setFocusPainted(false);
         borrowBtn.addActionListener(e -> borrowBook());
         bottomPanel.add(borrowBtn);
 
         JButton returnBtn = new JButton("归还此书");
         returnBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
-        returnBtn.setBackground(new Color(200, 60, 50));
-        returnBtn.setForeground(Color.WHITE);
+        returnBtn.setBackground(new Color(230, 130, 120));
+        returnBtn.setForeground(btnDark);
         returnBtn.setFocusPainted(false);
         returnBtn.addActionListener(e -> returnBook());
         bottomPanel.add(returnBtn);

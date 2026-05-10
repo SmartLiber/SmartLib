@@ -98,8 +98,8 @@ public class RegisterFrame extends JFrame {
         captchaPanel.add(captchaImageLabel);
 
         JButton refreshBtn = new JButton("刷新");
-        refreshBtn.setFont(new Font("微软雅黑", Font.PLAIN, 12));
-        refreshBtn.setPreferredSize(new Dimension(55, 30));
+        refreshBtn.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+        refreshBtn.setPreferredSize(new Dimension(75, 38));
         refreshBtn.setFocusPainted(false);
         refreshBtn.setBackground(new Color(200, 200, 210));
         refreshBtn.setForeground(darkColor);
@@ -141,8 +141,8 @@ public class RegisterFrame extends JFrame {
         registerButton = new JButton("注 册");
         registerButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
         registerButton.setPreferredSize(new Dimension(120, 40));
-        registerButton.setBackground(new Color(46, 134, 70));
-        registerButton.setForeground(Color.WHITE);
+        registerButton.setBackground(new Color(120, 190, 140));
+        registerButton.setForeground(darkColor);
         registerButton.setFocusPainted(false);
         registerButton.addActionListener(e -> handleRegister());
 

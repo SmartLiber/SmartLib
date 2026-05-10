@@ -91,8 +91,8 @@ public class EditUserInfoFrame extends JFrame {
         JButton saveButton = new JButton("💾 保存");
         saveButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
         saveButton.setPreferredSize(new Dimension(120, 40));
-        saveButton.setBackground(new Color(46, 204, 113));
-        saveButton.setForeground(Color.WHITE);
+        saveButton.setBackground(new Color(120, 220, 160));
+        saveButton.setForeground(new Color(50, 50, 60));
         saveButton.setFocusPainted(false);
         saveButton.addActionListener(new ActionListener() {
             @Override

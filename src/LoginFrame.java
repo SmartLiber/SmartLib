@@ -79,8 +79,8 @@ public class LoginFrame extends JFrame {
         captchaPanel.add(captchaImageLabel);
 
         JButton refreshBtn = new JButton("刷新");
-        refreshBtn.setFont(new Font("微软雅黑", Font.PLAIN, 12));
-        refreshBtn.setPreferredSize(new Dimension(55, 30));
+        refreshBtn.setFont(new Font("微软雅黑", Font.PLAIN, 13));
+        refreshBtn.setPreferredSize(new Dimension(75, 38));
         refreshBtn.setFocusPainted(false);
         refreshBtn.setBackground(new Color(200, 200, 210));
         refreshBtn.setForeground(darkColor);
@@ -122,8 +122,8 @@ public class LoginFrame extends JFrame {
         loginButton = new JButton("登 录");
         loginButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
         loginButton.setPreferredSize(new Dimension(120, 40));
-        loginButton.setBackground(new Color(41, 128, 185));
-        loginButton.setForeground(Color.WHITE);
+        loginButton.setBackground(new Color(120, 180, 230));
+        loginButton.setForeground(darkColor);
         loginButton.setFocusPainted(false);
         loginButton.addActionListener(e -> handleLogin());
 

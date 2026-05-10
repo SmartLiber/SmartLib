@@ -82,8 +82,8 @@ public class BookDetailFrame extends JFrame {
         borrowBtn = new JButton("借阅");
         borrowBtn.setFont(new Font("微软雅黑", Font.BOLD, 14));
         borrowBtn.setPreferredSize(new Dimension(100, 36));
-        borrowBtn.setBackground(new Color(41, 128, 185));
-        borrowBtn.setForeground(Color.WHITE);
+        borrowBtn.setBackground(new Color(120, 180, 230));
+        borrowBtn.setForeground(btnDark);
         borrowBtn.setFocusPainted(false);
         borrowBtn.addActionListener(e -> handleBorrow());
         buttonPanel.add(borrowBtn);
@@ -91,8 +91,8 @@ public class BookDetailFrame extends JFrame {
         returnBtn = new JButton("归还");
         returnBtn.setFont(new Font("微软雅黑", Font.BOLD, 14));
         returnBtn.setPreferredSize(new Dimension(100, 36));
-        returnBtn.setBackground(new Color(200, 60, 50));
-        returnBtn.setForeground(Color.WHITE);
+        returnBtn.setBackground(new Color(230, 130, 120));
+        returnBtn.setForeground(btnDark);
         returnBtn.setFocusPainted(false);
         returnBtn.addActionListener(e -> handleReturn());
         buttonPanel.add(returnBtn);
@@ -100,8 +100,8 @@ public class BookDetailFrame extends JFrame {
         renewBtn = new JButton("续借");
         renewBtn.setFont(new Font("微软雅黑", Font.BOLD, 14));
         renewBtn.setPreferredSize(new Dimension(100, 36));
-        renewBtn.setBackground(new Color(46, 134, 70));
-        renewBtn.setForeground(Color.WHITE);
+        renewBtn.setBackground(new Color(120, 190, 140));
+        renewBtn.setForeground(btnDark);
         renewBtn.setFocusPainted(false);
         renewBtn.addActionListener(e -> handleRenew());
         buttonPanel.add(renewBtn);

@@ -83,16 +83,16 @@ public class AdminFrame extends JFrame {
 
         JButton addBtn = new JButton("添加图书");
         addBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
-        addBtn.setBackground(new Color(41, 128, 185));
-        addBtn.setForeground(Color.WHITE);
+        addBtn.setBackground(new Color(120, 180, 230));
+        addBtn.setForeground(btnDark);
         addBtn.setFocusPainted(false);
         addBtn.addActionListener(e -> showBookEditDialog(null));
         btnPanel.add(addBtn);
 
         JButton editBtn = new JButton("编辑图书");
         editBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
-        editBtn.setBackground(new Color(46, 134, 70));
-        editBtn.setForeground(Color.WHITE);
+        editBtn.setBackground(new Color(120, 190, 140));
+        editBtn.setForeground(btnDark);
         editBtn.setFocusPainted(false);
         editBtn.addActionListener(e -> {
             int bookId = getSelectedBookId();
@@ -105,8 +105,8 @@ public class AdminFrame extends JFrame {
 
         JButton delBtn = new JButton("删除图书");
         delBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
-        delBtn.setBackground(new Color(200, 60, 50));
-        delBtn.setForeground(Color.WHITE);
+        delBtn.setBackground(new Color(230, 130, 120));
+        delBtn.setForeground(btnDark);
         delBtn.setFocusPainted(false);
         delBtn.addActionListener(e -> deleteBook());
         btnPanel.add(delBtn);
@@ -292,16 +292,16 @@ public class AdminFrame extends JFrame {
 
         JButton addCatBtn = new JButton("添加分类");
         addCatBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
-        addCatBtn.setBackground(new Color(41, 128, 185));
-        addCatBtn.setForeground(Color.WHITE);
+        addCatBtn.setBackground(new Color(120, 180, 230));
+        addCatBtn.setForeground(btnDark);
         addCatBtn.setFocusPainted(false);
         addCatBtn.addActionListener(e -> addCategory());
         btnPanel.add(addCatBtn);
 
         JButton delCatBtn = new JButton("删除分类");
         delCatBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
-        delCatBtn.setBackground(new Color(200, 60, 50));
-        delCatBtn.setForeground(Color.WHITE);
+        delCatBtn.setBackground(new Color(230, 130, 120));
+        delCatBtn.setForeground(btnDark);
         delCatBtn.setFocusPainted(false);
         delCatBtn.addActionListener(e -> deleteCategory());
         btnPanel.add(delCatBtn);

@@ -128,11 +128,11 @@ public class MainFrame extends JFrame {
         menuHelp.add(itemHelpInfo);
         menuHelp.add(itemAbout);
 
-        // 添加所有菜单到菜单栏
-        menuBar.add(menuCommon);
-        menuBar.add(menuPersonal);
+        // 添加所有菜单到菜单栏（系统维护和帮助在最左边）
         menuBar.add(menuSystem);
         menuBar.add(menuHelp);
+        menuBar.add(menuCommon);
+        menuBar.add(menuPersonal);
 
         setJMenuBar(menuBar);
     }
@@ -141,43 +141,70 @@ public class MainFrame extends JFrame {
      * 初始化主界面内容
      */
     private void initUI() {
-        JPanel mainPanel = new JPanel(new BorderLayout());
+        JPanel mainPanel = new JPanel(new BorderLayout(0, 15));
         mainPanel.setBackground(Color.WHITE);
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
+        // 顶部：封面图片
         JLabel coverLabel = new JLabel();
-        ImageIcon coverIcon = new ImageIcon("d:/Study_coding/SmartLib/picture/SmartLib封面.png");
+        ImageIcon coverIcon = new ImageIcon("picture/SmartLib封面.png");
         Image coverImage = coverIcon.getImage().getScaledInstance(850, 300, Image.SCALE_SMOOTH);
         coverLabel.setIcon(new ImageIcon(coverImage));
         coverLabel.setHorizontalAlignment(JLabel.CENTER);
 
-        JPanel welcomePanel = new JPanel(new GridBagLayout());
-        welcomePanel.setBackground(Color.WHITE);
-        GridBagConstraints g = new GridBagConstraints();
-        g.insets = new Insets(10, 10, 10, 10);
+        // 中间：欢迎文字 + 功能按钮
+        JPanel centerPanel = new JPanel(new BorderLayout(0, 20));
+        centerPanel.setBackground(Color.WHITE);
 
-        g.gridy = 0;
-        JLabel welcomeLabel = new JLabel("欢迎使用 SmartLib 图书馆管理系统");
+        JLabel welcomeLabel = new JLabel("欢迎使用 SmartLib 图书馆管理系统", JLabel.CENTER);
         welcomeLabel.setFont(new Font("微软雅黑", Font.BOLD, 26));
         welcomeLabel.setForeground(new Color(41, 128, 185));
-        welcomePanel.add(welcomeLabel, g);
 
-        g.gridy = 1;
-        g.insets = new Insets(20, 10, 30, 10);
-        JLabel infoLabel = new JLabel("<html><div style='text-align:center;'>"
-                + "当前用户：" + currentUser.getUsername() + " | ID：" + currentUser.getUserId() + "<br><br>"
-                + "请使用顶部菜单栏进行操作：<br><br>"
-                + "【常用功能】浏览图书 · 智能小助手<br>"
-                + "【个人中心】个人信息 · 编辑信息 · 借阅管理<br>"
-                + "【系统维护】后台管理 · 用户管理 · 刷新数据<br>"
-                + "</div></html>");
-        infoLabel.setFont(new Font("微软雅黑", Font.PLAIN, 14));
-        infoLabel.setForeground(new Color(100, 100, 100));
-        welcomePanel.add(infoLabel, g);
+        JLabel userLabel = new JLabel("当前用户：" + currentUser.getUsername()
+                + " | ID：" + currentUser.getUserId(), JLabel.CENTER);
+        userLabel.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        userLabel.setForeground(new Color(100, 100, 100));
+
+        JPanel titlePanel = new JPanel(new GridLayout(2, 1, 5, 5));
+        titlePanel.setBackground(Color.WHITE);
+        titlePanel.add(welcomeLabel);
+        titlePanel.add(userLabel);
+
+        // 2×2 功能按钮矩形
+        JPanel btnGrid = new JPanel(new GridLayout(2, 2, 30, 30));
+        btnGrid.setBackground(Color.WHITE);
+        btnGrid.setBorder(BorderFactory.createEmptyBorder(20, 120, 10, 120));
+
+        btnGrid.add(createFuncButton("浏览图书", "📖", new Color(41, 128, 185),
+                e -> browseBooks()));
+        btnGrid.add(createFuncButton("智能小助手", "🤖", new Color(46, 134, 70),
+                e -> openAiAgent()));
+        btnGrid.add(createFuncButton("个人信息", "👤", new Color(230, 126, 34),
+                e -> showPersonalInfo()));
+        btnGrid.add(createFuncButton("借阅管理", "📋", new Color(142, 68, 173),
+                e -> openBorrowManage()));
+
+        centerPanel.add(titlePanel, BorderLayout.NORTH);
+        centerPanel.add(btnGrid, BorderLayout.CENTER);
 
         mainPanel.add(coverLabel, BorderLayout.NORTH);
-        mainPanel.add(welcomePanel, BorderLayout.CENTER);
+        mainPanel.add(centerPanel, BorderLayout.CENTER);
         add(mainPanel);
+    }
+
+    private JButton createFuncButton(String text, String icon, Color bgColor,
+                                     java.awt.event.ActionListener action) {
+        JButton btn = new JButton(icon + "  " + text);
+        btn.setFont(new Font("微软雅黑", Font.BOLD, 18));
+        btn.setBackground(bgColor);
+        btn.setForeground(new Color(50, 50, 60));
+        btn.setFocusPainted(false);
+        btn.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(bgColor.darker(), 2),
+                BorderFactory.createEmptyBorder(20, 30, 20, 30)));
+        btn.addActionListener(action);
+        btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        return btn;
     }
 
     // === 菜单项对应的方法 ===
