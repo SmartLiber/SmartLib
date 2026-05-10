@@ -7,14 +7,25 @@ public class DBUtil {
     private static final String USER = "root";
     private static final String PASSWORD = "123456";
 
-    public static Connection getConnection() {
-        Connection conn = null;
+    static {
         try {
-            conn = DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (SQLException e) {
-            e.printStackTrace();
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException("MySQL JDBC驱动未找到！请确认 lib/mysql-connector-j-9.3.0.jar 在 classpath 中。", e);
         }
-        return conn;
+    }
+
+    public static Connection getConnection() {
+        try {
+            return DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (SQLException e) {
+            throw new RuntimeException(
+                "数据库连接失败！请检查：\n" +
+                "1. MySQL服务是否已启动\n" +
+                "2. 数据库 book_java_sys 是否存在\n" +
+                "3. 用户名密码是否正确（root / 123456）\n" +
+                "原始错误：" + e.getMessage(), e);
+        }
     }
 
     public static void closeConnection(Connection conn) {
