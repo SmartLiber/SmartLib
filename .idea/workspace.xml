@@ -4,8 +4,58 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f568cf3-c5f3-49b9-9e68-76983cc35b22" name="更改" comment="sb">
+    <list default="true" id="0f568cf3-c5f3-49b9-9e68-76983cc35b22" name="更改" comment="202605004">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.spec-workflow/templates/design-template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.spec-workflow/templates/product-template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.spec-workflow/templates/requirements-template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.spec-workflow/templates/structure-template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.spec-workflow/templates/tasks-template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.spec-workflow/templates/tech-template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.spec-workflow/user-templates/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AdminFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AdminFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AdminFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AiAgent$StreamCallback.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AiAgent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AiAgentUI$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AiAgentUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookCategoryDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookDetailFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookListFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookListFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookListFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BorrowHistoryFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BorrowHistoryFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditUserInfoFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditUserInfoFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditUserInfoFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginFrame$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoginFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterFrame$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterFrame$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RegisterFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test_sql.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UnreturnedBooksFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserDetailFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserListFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserServiceTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +85,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="xsm" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,9 +96,6 @@
     &quot;assignee&quot;: &quot;DIAG5&quot;
   }
 }</component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="19a2a8d1-02bd-4678-9925-fbb5b02f379a" />
-  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/SmartLiber/SmartLib.git&quot;,
@@ -78,7 +125,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "Y",
+    "git-widget-placeholder": "main",
     "git.auto.fetch.suggestion.counter": "1",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -90,8 +137,9 @@
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true",
+    "应用程序.AiAgentUI.executor": "Run",
     "应用程序.Main.executor": "Run"
   },
   "keyToStringList": {
@@ -100,7 +148,14 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="应用程序.AiAgentUI">
+    <configuration name="AiAgentUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AiAgentUI" />
+      <module name="smartlib" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="mysql-connector-j-9.3.0.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/lib/mysql-connector-j-9.3.0.jar" />
       <method v="2" />
@@ -119,9 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.AiAgentUI" />
         <item itemvalue="JAR 应用程序.mysql-connector-j-9.3.0.jar" />
+        <item itemvalue="应用程序.AiAgentUI" />
         <item itemvalue="JAR 应用程序.mysql-connector-j-9.3.0.jar" />
-        <item itemvalue="JAR 应用程序.mysql-connector-j-9.3.0.jar" />
+        <item itemvalue="应用程序.AiAgentUI" />
       </list>
     </recent_temporary>
   </component>
@@ -142,6 +199,9 @@
       <workItem from="1777653107148" duration="738000" />
       <workItem from="1777708103708" duration="2945000" />
       <workItem from="1777713148539" duration="6359000" />
+      <workItem from="1777883982163" duration="6682000" />
+      <workItem from="1778238203761" duration="139000" />
+      <workItem from="1778409662080" duration="711000" />
     </task>
     <task id="LOCAL-00001" summary="萨">
       <option name="closed" value="true" />
@@ -199,7 +259,47 @@
       <option name="project" value="LOCAL" />
       <updated>1777713034027</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="202605003">
+      <option name="closed" value="true" />
+      <created>1777809208010</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1777809208010</updated>
+    </task>
+    <task id="LOCAL-00009" summary="202605003">
+      <option name="closed" value="true" />
+      <created>1777884316646</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1777884316646</updated>
+    </task>
+    <task id="LOCAL-00010" summary="202605004">
+      <option name="closed" value="true" />
+      <created>1777885736495</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1777885736495</updated>
+    </task>
+    <task id="LOCAL-00011" summary="202605004">
+      <option name="closed" value="true" />
+      <created>1777886013153</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1777886013153</updated>
+    </task>
+    <task id="LOCAL-00012" summary="202605004">
+      <option name="closed" value="true" />
+      <created>1778409896771</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1778409896771</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +316,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="xsm" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -233,6 +333,8 @@
     <MESSAGE value="许书铭" />
     <MESSAGE value="sb" />
     <MESSAGE value="2026050022215" />
-    <option name="LAST_COMMIT_MESSAGE" value="2026050022215" />
+    <MESSAGE value="202605003" />
+    <MESSAGE value="202605004" />
+    <option name="LAST_COMMIT_MESSAGE" value="202605004" />
   </component>
 </project>
