@@ -14,7 +14,7 @@ public class MainFrame extends JFrame {
         this.userService = new UserService();
 
         setTitle("SmartLib - 图书馆管理系统");
-        setSize(900, 600);
+        setSize(900, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -36,9 +36,9 @@ public class MainFrame extends JFrame {
         itemBrowseBooks.setFont(new Font("微软雅黑", Font.PLAIN, 13));
         itemBrowseBooks.addActionListener(e -> browseBooks());
 
-        JMenuItem itemSearchBooks = new JMenuItem("查找图书");
+        JMenuItem itemSearchBooks = new JMenuItem("智能小助手");
         itemSearchBooks.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        itemSearchBooks.addActionListener(e -> searchBooks());
+        itemSearchBooks.addActionListener(e -> openAiAgent());
 
         menuCommon.add(itemBrowseBooks);
         menuCommon.add(itemSearchBooks);
@@ -143,7 +143,13 @@ public class MainFrame extends JFrame {
     private void initUI() {
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setBackground(Color.WHITE);
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(40, 40, 40, 40));
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+
+        JLabel coverLabel = new JLabel();
+        ImageIcon coverIcon = new ImageIcon("d:/Study_coding/SmartLib/picture/SmartLib封面.png");
+        Image coverImage = coverIcon.getImage().getScaledInstance(850, 300, Image.SCALE_SMOOTH);
+        coverLabel.setIcon(new ImageIcon(coverImage));
+        coverLabel.setHorizontalAlignment(JLabel.CENTER);
 
         JPanel welcomePanel = new JPanel(new GridBagLayout());
         welcomePanel.setBackground(Color.WHITE);
@@ -161,7 +167,7 @@ public class MainFrame extends JFrame {
         JLabel infoLabel = new JLabel("<html><div style='text-align:center;'>"
                 + "当前用户：" + currentUser.getUsername() + " | ID：" + currentUser.getUserId() + "<br><br>"
                 + "请使用顶部菜单栏进行操作：<br><br>"
-                + "【常用功能】浏览图书 · 查找图书<br>"
+                + "【常用功能】浏览图书 · 智能小助手<br>"
                 + "【个人中心】个人信息 · 编辑信息 · 借阅管理<br>"
                 + "【系统维护】后台管理 · 用户管理 · 刷新数据<br>"
                 + "</div></html>");
@@ -169,6 +175,7 @@ public class MainFrame extends JFrame {
         infoLabel.setForeground(new Color(100, 100, 100));
         welcomePanel.add(infoLabel, g);
 
+        mainPanel.add(coverLabel, BorderLayout.NORTH);
         mainPanel.add(welcomePanel, BorderLayout.CENTER);
         add(mainPanel);
     }
@@ -179,8 +186,8 @@ public class MainFrame extends JFrame {
         new BookListFrame(currentUser).setVisible(true);
     }
 
-    private void searchBooks() {
-        new BookListFrame(currentUser).setVisible(true);
+    private void openAiAgent() {
+        new AiAgentUI().setVisible(true);
     }
 
     private void showPersonalInfo() {
