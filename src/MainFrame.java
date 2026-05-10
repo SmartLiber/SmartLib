@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * 系统主界面（重新排版版）
@@ -36,12 +34,10 @@ public class MainFrame extends JFrame {
 
         JMenuItem itemBrowseBooks = new JMenuItem("浏览图书");
         itemBrowseBooks.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        itemBrowseBooks.setIcon(new ImageIcon("material/浏览图书.jpg"));
         itemBrowseBooks.addActionListener(e -> browseBooks());
 
         JMenuItem itemSearchBooks = new JMenuItem("查找图书");
         itemSearchBooks.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        itemSearchBooks.setIcon(new ImageIcon("material/查找图书.jpg"));
         itemSearchBooks.addActionListener(e -> searchBooks());
 
         menuCommon.add(itemBrowseBooks);
@@ -54,7 +50,7 @@ public class MainFrame extends JFrame {
         // 我的空间（带子菜单：个人信息、编辑信息、登录、退出登录）
         JMenu subMenuMySpace = new JMenu("我的空间");
         subMenuMySpace.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        subMenuMySpace.setIcon(new ImageIcon("material/我的空间.jpg"));
+        // subMenuMySpace.setIcon removed - material/ not available
 
         JMenuItem itemPersonalInfo = new JMenuItem("个人信息");
         itemPersonalInfo.setFont(new Font("微软雅黑", Font.PLAIN, 13));
@@ -66,7 +62,6 @@ public class MainFrame extends JFrame {
 
         JMenuItem itemLogin = new JMenuItem("登录");
         itemLogin.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        itemLogin.setIcon(new ImageIcon("material/登录.jpg"));
         itemLogin.addActionListener(e -> reLogin());
 
         JMenuItem itemLogout = new JMenuItem("退出登录");
@@ -93,7 +88,6 @@ public class MainFrame extends JFrame {
 
         JMenuItem itemAdmin = new JMenuItem("后台管理");
         itemAdmin.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        itemAdmin.setIcon(new ImageIcon("material/后台管理.jpg"));
         itemAdmin.addActionListener(e -> openAdmin());
 
         JMenu subMenuUserManage = new JMenu("用户管理");
@@ -125,12 +119,10 @@ public class MainFrame extends JFrame {
 
         JMenuItem itemHelpInfo = new JMenuItem("帮助信息");
         itemHelpInfo.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        itemHelpInfo.setIcon(new ImageIcon("material/帮助信息.jpg"));
         itemHelpInfo.addActionListener(e -> showHelp());
 
         JMenuItem itemAbout = new JMenuItem("关于系统");
         itemAbout.setFont(new Font("微软雅黑", Font.PLAIN, 13));
-        itemAbout.setIcon(new ImageIcon("material/帮助信息.jpg"));
         itemAbout.addActionListener(e -> showAbout());
 
         menuHelp.add(itemHelpInfo);
@@ -151,24 +143,44 @@ public class MainFrame extends JFrame {
     private void initUI() {
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setBackground(Color.WHITE);
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(40, 40, 40, 40));
 
+        JPanel welcomePanel = new JPanel(new GridBagLayout());
+        welcomePanel.setBackground(Color.WHITE);
+        GridBagConstraints g = new GridBagConstraints();
+        g.insets = new Insets(10, 10, 10, 10);
+
+        g.gridy = 0;
+        JLabel welcomeLabel = new JLabel("欢迎使用 SmartLib 图书馆管理系统");
+        welcomeLabel.setFont(new Font("微软雅黑", Font.BOLD, 26));
+        welcomeLabel.setForeground(new Color(41, 128, 185));
+        welcomePanel.add(welcomeLabel, g);
+
+        g.gridy = 1;
+        g.insets = new Insets(20, 10, 30, 10);
+        JLabel infoLabel = new JLabel("<html><div style='text-align:center;'>"
+                + "当前用户：" + currentUser.getUsername() + " | ID：" + currentUser.getUserId() + "<br><br>"
+                + "请使用顶部菜单栏进行操作：<br><br>"
+                + "【常用功能】浏览图书 · 查找图书<br>"
+                + "【个人中心】个人信息 · 编辑信息 · 借阅管理<br>"
+                + "【系统维护】后台管理 · 用户管理 · 刷新数据<br>"
+                + "</div></html>");
+        infoLabel.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        infoLabel.setForeground(new Color(100, 100, 100));
+        welcomePanel.add(infoLabel, g);
+
+        mainPanel.add(welcomePanel, BorderLayout.CENTER);
         add(mainPanel);
     }
 
     // === 菜单项对应的方法 ===
 
     private void browseBooks() {
-        JOptionPane.showMessageDialog(this,
-                " 浏览图书功能\n\n（此功能由开发人员B负责）",
-                "提示",
-                JOptionPane.INFORMATION_MESSAGE);
+        new BookListFrame(currentUser).setVisible(true);
     }
 
     private void searchBooks() {
-        JOptionPane.showMessageDialog(this,
-                " 查找图书功能\n\n（此功能由开发人员B负责）",
-                "提示",
-                JOptionPane.INFORMATION_MESSAGE);
+        new BookListFrame(currentUser).setVisible(true);
     }
 
     private void showPersonalInfo() {
@@ -208,10 +220,7 @@ public class MainFrame extends JFrame {
     }
 
     private void openAdmin() {
-        JOptionPane.showMessageDialog(this,
-                " 后台管理功能\n\n（此功能开发中）",
-                "提示",
-                JOptionPane.INFORMATION_MESSAGE);
+        new AdminFrame(currentUser).setVisible(true);
     }
 
     private void openUserList() {
