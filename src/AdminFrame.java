@@ -79,14 +79,21 @@ public class AdminFrame extends JFrame {
         panel.add(new JScrollPane(bookTable), BorderLayout.CENTER);
 
         JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        Color btnDark = new Color(50, 50, 60);
 
         JButton addBtn = new JButton("添加图书");
         addBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        addBtn.setBackground(new Color(41, 128, 185));
+        addBtn.setForeground(Color.WHITE);
+        addBtn.setFocusPainted(false);
         addBtn.addActionListener(e -> showBookEditDialog(null));
         btnPanel.add(addBtn);
 
         JButton editBtn = new JButton("编辑图书");
         editBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        editBtn.setBackground(new Color(46, 134, 70));
+        editBtn.setForeground(Color.WHITE);
+        editBtn.setFocusPainted(false);
         editBtn.addActionListener(e -> {
             int bookId = getSelectedBookId();
             if (bookId > 0) {
@@ -98,11 +105,17 @@ public class AdminFrame extends JFrame {
 
         JButton delBtn = new JButton("删除图书");
         delBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        delBtn.setBackground(new Color(200, 60, 50));
+        delBtn.setForeground(Color.WHITE);
+        delBtn.setFocusPainted(false);
         delBtn.addActionListener(e -> deleteBook());
         btnPanel.add(delBtn);
 
         JButton detailBtn = new JButton("查看详情");
         detailBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        detailBtn.setBackground(new Color(240, 240, 245));
+        detailBtn.setForeground(btnDark);
+        detailBtn.setFocusPainted(false);
         detailBtn.addActionListener(e -> {
             int bookId = getSelectedBookId();
             if (bookId > 0) new BookDetailFrame(bookId, currentUser).setVisible(true);
@@ -111,6 +124,9 @@ public class AdminFrame extends JFrame {
 
         JButton refreshBtn = new JButton("刷新");
         refreshBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        refreshBtn.setBackground(new Color(240, 240, 245));
+        refreshBtn.setForeground(btnDark);
+        refreshBtn.setFocusPainted(false);
         refreshBtn.addActionListener(e -> loadBookData());
         btnPanel.add(refreshBtn);
 
@@ -272,19 +288,29 @@ public class AdminFrame extends JFrame {
         panel.add(new JScrollPane(catTable), BorderLayout.CENTER);
 
         JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        Color btnDark = new Color(50, 50, 60);
 
         JButton addCatBtn = new JButton("添加分类");
         addCatBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        addCatBtn.setBackground(new Color(41, 128, 185));
+        addCatBtn.setForeground(Color.WHITE);
+        addCatBtn.setFocusPainted(false);
         addCatBtn.addActionListener(e -> addCategory());
         btnPanel.add(addCatBtn);
 
         JButton delCatBtn = new JButton("删除分类");
         delCatBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        delCatBtn.setBackground(new Color(200, 60, 50));
+        delCatBtn.setForeground(Color.WHITE);
+        delCatBtn.setFocusPainted(false);
         delCatBtn.addActionListener(e -> deleteCategory());
         btnPanel.add(delCatBtn);
 
         JButton refreshCatBtn = new JButton("刷新");
         refreshCatBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        refreshCatBtn.setBackground(new Color(240, 240, 245));
+        refreshCatBtn.setForeground(btnDark);
+        refreshCatBtn.setFocusPainted(false);
         refreshCatBtn.addActionListener(e -> loadCategoryData());
         btnPanel.add(refreshCatBtn);
 

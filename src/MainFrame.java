@@ -227,7 +227,11 @@ public class MainFrame extends JFrame {
     }
 
     private void openAdmin() {
-        new AdminFrame(currentUser).setVisible(true);
+        PasswordDialog pwd = new PasswordDialog(this);
+        pwd.setVisible(true);
+        if (pwd.isAuthenticated()) {
+            new AdminFrame(currentUser).setVisible(true);
+        }
     }
 
     private void openUserList() {

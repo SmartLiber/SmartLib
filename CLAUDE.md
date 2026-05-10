@@ -15,12 +15,14 @@
 ## 编译与运行
 
 ```bash
-# 编译
-javac -encoding UTF-8 -cp "lib/mysql-connector-j-9.3.0.jar" src/*.java
+# 编译（class文件输出到 build/ 目录）
+javac -encoding UTF-8 -d build -cp "lib/mysql-connector-j-9.3.0.jar" src/*.java
 
 # 运行
-java -cp "src;lib/mysql-connector-j-9.3.0.jar" Main
+java -cp "build;lib/mysql-connector-j-9.3.0.jar" Main
 ```
+
+编译输出目录 `build/` 已加入 `.gitignore`，不会提交到仓库。
 
 数据库配置在 [DBUtil.java](src/DBUtil.java):
 - URL: `jdbc:mysql://localhost:3306/book_java_sys`

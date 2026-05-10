@@ -77,34 +77,50 @@ public class BookDetailFrame extends JFrame {
 
         // 按钮
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 10));
+        Color btnDark = new Color(50, 50, 60);
 
         borrowBtn = new JButton("借阅");
         borrowBtn.setFont(new Font("微软雅黑", Font.BOLD, 14));
         borrowBtn.setPreferredSize(new Dimension(100, 36));
+        borrowBtn.setBackground(new Color(41, 128, 185));
+        borrowBtn.setForeground(Color.WHITE);
+        borrowBtn.setFocusPainted(false);
         borrowBtn.addActionListener(e -> handleBorrow());
         buttonPanel.add(borrowBtn);
 
         returnBtn = new JButton("归还");
         returnBtn.setFont(new Font("微软雅黑", Font.BOLD, 14));
         returnBtn.setPreferredSize(new Dimension(100, 36));
+        returnBtn.setBackground(new Color(200, 60, 50));
+        returnBtn.setForeground(Color.WHITE);
+        returnBtn.setFocusPainted(false);
         returnBtn.addActionListener(e -> handleReturn());
         buttonPanel.add(returnBtn);
 
         renewBtn = new JButton("续借");
         renewBtn.setFont(new Font("微软雅黑", Font.BOLD, 14));
         renewBtn.setPreferredSize(new Dimension(100, 36));
+        renewBtn.setBackground(new Color(46, 134, 70));
+        renewBtn.setForeground(Color.WHITE);
+        renewBtn.setFocusPainted(false);
         renewBtn.addActionListener(e -> handleRenew());
         buttonPanel.add(renewBtn);
 
         refreshBtn = new JButton("刷新");
         refreshBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
         refreshBtn.setPreferredSize(new Dimension(100, 36));
+        refreshBtn.setBackground(new Color(240, 240, 245));
+        refreshBtn.setForeground(btnDark);
+        refreshBtn.setFocusPainted(false);
         refreshBtn.addActionListener(e -> loadBookDetail());
         buttonPanel.add(refreshBtn);
 
         closeBtn = new JButton("关闭");
         closeBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
         closeBtn.setPreferredSize(new Dimension(100, 36));
+        closeBtn.setBackground(new Color(240, 240, 245));
+        closeBtn.setForeground(btnDark);
+        closeBtn.setFocusPainted(false);
         closeBtn.addActionListener(e -> dispose());
         buttonPanel.add(closeBtn);
 
@@ -115,12 +131,14 @@ public class BookDetailFrame extends JFrame {
 
     private void addInfoRow(JPanel panel, GridBagConstraints gbc, int row,
                             String labelText, Font labelFont, Font valueFont) {
+        Color darkColor = new Color(50, 50, 60);
         gbc.gridx = 0; gbc.gridy = row;
         gbc.gridwidth = 1;
         gbc.fill = GridBagConstraints.NONE;
         gbc.weightx = 0;
         JLabel lbl = new JLabel(labelText);
         lbl.setFont(labelFont);
+        lbl.setForeground(darkColor);
         panel.add(lbl, gbc);
 
         gbc.gridx = 1;
@@ -128,6 +146,7 @@ public class BookDetailFrame extends JFrame {
         gbc.weightx = 1.0;
         JLabel val = new JLabel("-");
         val.setFont(valueFont);
+        val.setForeground(darkColor);
         panel.add(val, gbc);
     }
 

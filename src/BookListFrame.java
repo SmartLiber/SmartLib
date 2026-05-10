@@ -114,24 +114,37 @@ public class BookListFrame extends JFrame {
 
         // 底部按钮
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 10));
+        Color btnDark = new Color(50, 50, 60);
 
         JButton detailBtn = new JButton("查看详情");
         detailBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        detailBtn.setBackground(new Color(240, 240, 245));
+        detailBtn.setForeground(btnDark);
+        detailBtn.setFocusPainted(false);
         detailBtn.addActionListener(e -> openBookDetail());
         bottomPanel.add(detailBtn);
 
         JButton borrowBtn = new JButton("借阅此书");
         borrowBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        borrowBtn.setBackground(new Color(41, 128, 185));
+        borrowBtn.setForeground(Color.WHITE);
+        borrowBtn.setFocusPainted(false);
         borrowBtn.addActionListener(e -> borrowBook());
         bottomPanel.add(borrowBtn);
 
         JButton returnBtn = new JButton("归还此书");
         returnBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        returnBtn.setBackground(new Color(200, 60, 50));
+        returnBtn.setForeground(Color.WHITE);
+        returnBtn.setFocusPainted(false);
         returnBtn.addActionListener(e -> returnBook());
         bottomPanel.add(returnBtn);
 
         JButton closeBtn = new JButton("关闭");
         closeBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        closeBtn.setBackground(new Color(240, 240, 245));
+        closeBtn.setForeground(btnDark);
+        closeBtn.setFocusPainted(false);
         closeBtn.addActionListener(e -> dispose());
         bottomPanel.add(closeBtn);
 

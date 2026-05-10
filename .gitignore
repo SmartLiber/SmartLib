@@ -36,3 +36,6 @@ bin/
 *.iws
 *.ipr
 out
+
+# 编译输出
+build/
