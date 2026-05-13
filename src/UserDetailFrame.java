@@ -27,7 +27,7 @@ public class UserDetailFrame extends JFrame {
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 40, 20, 40));
         
         JPanel titlePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        JLabel titleLabel = new JLabel("👤 用户详情");
+        JLabel titleLabel = new JLabel("用户详情");
         titleLabel.setFont(new Font("微软雅黑", Font.BOLD, 22));
         titleLabel.setForeground(new Color(41, 128, 185));
         titlePanel.add(titleLabel);
@@ -74,11 +74,11 @@ public class UserDetailFrame extends JFrame {
         
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         
-        JButton refreshButton = new JButton("🔄 刷新");
+        JButton refreshButton = new JButton("刷新");
         refreshButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
         refreshButton.addActionListener(e -> refreshUserInfo());
         
-        JButton closeButton = new JButton("❌ 关闭");
+        JButton closeButton = new JButton("关闭");
         closeButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
         closeButton.addActionListener(e -> dispose());
         

@@ -29,7 +29,7 @@ public class UserListFrame extends JFrame {
         JPanel mainPanel = new JPanel(new BorderLayout(10, 10));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         
-        JLabel titleLabel = new JLabel("📚 用户列表");
+        JLabel titleLabel = new JLabel("用户列表");
         titleLabel.setFont(new Font("微软雅黑", Font.BOLD, 20));
         titleLabel.setForeground(new Color(41, 128, 185));
         mainPanel.add(titleLabel, BorderLayout.NORTH);
@@ -45,11 +45,11 @@ public class UserListFrame extends JFrame {
         
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
         
-        JButton refreshButton = new JButton("🔄 刷新");
+        JButton refreshButton = new JButton("刷新");
         refreshButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
         refreshButton.addActionListener(e -> loadUserData());
         
-        JButton closeButton = new JButton("❌ 关闭");
+        JButton closeButton = new JButton("关闭");
         closeButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
         closeButton.addActionListener(e -> dispose());
         

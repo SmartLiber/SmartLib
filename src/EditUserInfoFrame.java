@@ -32,7 +32,7 @@ public class EditUserInfoFrame extends JFrame {
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 40, 20, 40));
         
         JPanel titlePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        JLabel titleLabel = new JLabel("✏️ 编辑用户信息");
+        JLabel titleLabel = new JLabel("编辑用户信息");
         titleLabel.setFont(new Font("微软雅黑", Font.BOLD, 22));
         titleLabel.setForeground(new Color(46, 204, 113));
         titlePanel.add(titleLabel);
@@ -88,7 +88,7 @@ public class EditUserInfoFrame extends JFrame {
         
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
         
-        JButton saveButton = new JButton("💾 保存");
+        JButton saveButton = new JButton("保存");
         saveButton.setFont(new Font("微软雅黑", Font.BOLD, 15));
         saveButton.setPreferredSize(new Dimension(120, 40));
         saveButton.setBackground(new Color(120, 220, 160));
@@ -101,7 +101,7 @@ public class EditUserInfoFrame extends JFrame {
             }
         });
         
-        JButton cancelButton = new JButton("❌ 取消");
+        JButton cancelButton = new JButton("取消");
         cancelButton.setFont(new Font("微软雅黑", Font.PLAIN, 15));
         cancelButton.setPreferredSize(new Dimension(120, 40));
         cancelButton.setFocusPainted(false);

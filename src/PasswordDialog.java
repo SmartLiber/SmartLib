@@ -34,23 +34,9 @@ public class PasswordDialog extends JDialog {
         passwordField = new JPasswordField(10);
         passwordField.setFont(new Font("微软雅黑", Font.PLAIN, 16));
         passwordField.setPreferredSize(new Dimension(180, 36));
-        passwordField.setEchoChar('●');
+        passwordField.setEchoChar((char) 0);
         passwordField.addActionListener(e -> verifyPassword());
         inputPanel.add(passwordField);
-
-        JToggleButton showBtn = new JToggleButton("👁");
-        showBtn.setFont(new Font("微软雅黑", Font.PLAIN, 14));
-        showBtn.setPreferredSize(new Dimension(45, 36));
-        showBtn.setFocusPainted(false);
-        showBtn.setToolTipText("显示/隐藏密码");
-        showBtn.addActionListener(e -> {
-            if (showBtn.isSelected()) {
-                passwordField.setEchoChar((char) 0);
-            } else {
-                passwordField.setEchoChar('●');
-            }
-        });
-        inputPanel.add(showBtn);
 
         mainPanel.add(inputPanel, BorderLayout.CENTER);
 
@@ -60,8 +46,8 @@ public class PasswordDialog extends JDialog {
         JButton confirmBtn = new JButton("确认");
         confirmBtn.setFont(new Font("微软雅黑", Font.BOLD, 14));
         confirmBtn.setPreferredSize(new Dimension(100, 36));
-        confirmBtn.setBackground(new Color(41, 128, 185));
-        confirmBtn.setForeground(Color.WHITE);
+        confirmBtn.setBackground(new Color(120, 180, 230));
+        confirmBtn.setForeground(new Color(50, 50, 60));
         confirmBtn.setFocusPainted(false);
         confirmBtn.addActionListener(e -> verifyPassword());
         btnPanel.add(confirmBtn);

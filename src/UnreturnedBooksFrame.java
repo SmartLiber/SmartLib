@@ -31,7 +31,7 @@ public class UnreturnedBooksFrame extends JFrame {
         JPanel mainPanel = new JPanel(new BorderLayout(10, 10));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
-        JLabel titleLabel = new JLabel("⚠️ 未还书籍 - 用户ID: " + userId);
+        JLabel titleLabel = new JLabel("未还书籍 - 用户ID: " + userId);
         titleLabel.setFont(new Font("微软雅黑", Font.BOLD, 20));
         titleLabel.setForeground(Color.RED);
         mainPanel.add(titleLabel, BorderLayout.NORTH);
@@ -47,15 +47,15 @@ public class UnreturnedBooksFrame extends JFrame {
 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
 
-        JButton checkButton = new JButton("🔍 检查状态");
+        JButton checkButton = new JButton("检查状态");
         checkButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
         checkButton.addActionListener(e -> checkUnreturnedStatus());
 
-        JButton refreshButton = new JButton("🔄 刷新");
+        JButton refreshButton = new JButton("刷新");
         refreshButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
         refreshButton.addActionListener(e -> loadUnreturnedBooks());
 
-        JButton closeButton = new JButton("❌ 关闭");
+        JButton closeButton = new JButton("关闭");
         closeButton.setFont(new Font("微软雅黑", Font.PLAIN, 14));
         closeButton.addActionListener(e -> dispose());
 
